@@ -1,19 +1,19 @@
 {
   "name": "card_tailwind",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.8",
-    "npx": "^10.2.2"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.2.4"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx tailwindcss -i tailwind.css -o layouts/css/styles.css --watch",
+    "prod": "npx tailwindcss -i tailwind.css -o layouts/css/styles.css --minify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.8"
+  }
 }
