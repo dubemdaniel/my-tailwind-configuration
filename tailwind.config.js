@@ -4,7 +4,11 @@ module.exports = {
     "*.{html,js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      font: {
+        myFont: 'Montserrat'
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
