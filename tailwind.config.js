@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      font: {
-        myFont: 'Montserrat'
+      fontFamily: {
+        myFont: ['Montserrat' , 'sans-serif']
       },
     },
   },

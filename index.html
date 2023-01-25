@@ -10,17 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="layouts/css/styles.css">
 </head>
-<body >
-   <div class="flex justify-center w-full h-screen p-12 align-middle bg-green-300">
-        <div id="wrapper" class="w-2/4 mx-auto text-center bg-red-300 ">
-            <h2 class="text-xl font-bold ">English Dictionary</h2>
-            <section id="inputs">
-                <input type="text"
-                        placeholder="Input Text"
-                        class="">
-            </section>
+<body class="flex items-center justify-center h-screen bg-blue-300 font-myFont ">
+    <div id="wrapper" class="w-2/4 bg-red-300">
+        <div id="header" class="b">
+            <h2>English Dictionary</h2>
         </div>
-   </div>
+        <section id="inputs" class="mt-8">
+            <form action="#">
+                <input type="text" placeholder="Input Text">
+                <input type="submit" value="search" class="block my-2">
+            </form>
+        </section>
+        <section id="results"></section>
+    </div>
 </body>
 </html>
 <!-- npm run dev: for development -->
