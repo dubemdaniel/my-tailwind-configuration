@@ -1,19 +1,35 @@
 // initialize Dictionary object
 const dictionary = new Dictionary
 
-const letter = document.getElementById('input');
+// initialize UI object
+const ui = new UI
+
+const letters = document.getElementById('input');
 
 const search = document.getElementById('search')
 
 let timeout;
 
-letter.addEventListener('keyup' , () => {
+letters.addEventListener('keyup' , e => {
+    e.preventDefault()
 
     clearTimeout(timeout);
 
+    const letter = e.target.value
+
+    dictionary.getWord(letter)
+        .then(data => {
+
+            if (data.words.title === 'No Definitions Found'){
+                console.log('no show')
+            }
+            console.log(data)
+            ui.showresult(data.words[0].meanings[0].definitions)
+        })
+
     timeout = setTimeout(() => {
 
-        console.log('alert')
+        console.log(letter)
 
     }, 500)
 })
