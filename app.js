@@ -22,6 +22,8 @@ letters.addEventListener('keyup' , e => {
 
             if (data.words.title === 'No Definitions Found'){
                 console.log('no show')
+
+                ui.invalid()
             }
             console.log(data)
             ui.showresult(data.words[0].meanings[0].definitions)
