@@ -13,25 +13,37 @@ let timeout;
 letters.addEventListener('keyup' , e => {
     e.preventDefault()
 
-    clearTimeout(timeout);
 
     const letter = e.target.value
 
-    dictionary.getWord(letter)
-        .then(data => {
+    clearTimeout(timeout);
 
-            if (data.words.title === 'No Definitions Found'){
-                console.log('no show')
+    if(!letter){
+        ui.clearResult()}
 
-                ui.invalid()
-            }
-            console.log(data)
-            ui.showresult(data.words[0].meanings[0].definitions)
-        })
+      else if (letters !== ''){
 
-    timeout = setTimeout(() => {
+        timeout = setTimeout(() => {
+    
+            dictionary.getWord(letter)
+              .then(data => {
+    
+                 if (data.words.title === 'No Definitions Found'){
+                      console.log('no show')
+    
+                         ui.invalid()
+                }else {
+                    console.log(data)
+                    ui.showresult(data.words[0].meanings[0].definitions)
+                }
+                  
+               }
+            )
+        
+        }, 2000)
+    } 
+    // if(!letter){
+    //     ui.clearResult()
+    // }
 
-        console.log(letter)
-
-    }, 500)
 })
